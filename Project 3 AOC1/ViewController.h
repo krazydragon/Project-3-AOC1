@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    NSInteger addAnswer; 
+    BOOL compareAnswer;   
+}
+-(void)addFirst:(NSInteger)numOne addSecond:(NSInteger)numTwo;
+-(void)compareFirst:(NSInteger)numOne compareSecond:(NSInteger)numTwo;
 
 @end

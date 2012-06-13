@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad
 {
+    [self addFirst:5 addSecond:5];
+    [self compareFirst:5 compareSecond:5];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -26,6 +28,26 @@
     // Release any retained subviews of the main view.
 }
 
+//Add Function
+-(void)addFirst:(NSInteger)numOne addSecond:(NSInteger)numTwo
+{
+    
+    addAnswer = numOne + numTwo;
+    NSLog(@"%d", addAnswer);
+}
+//Compare Function
+-(void)compareFirst:(NSInteger)numOne compareSecond:(NSInteger)numTwo
+{
+    if (numOne == numTwo)
+    {
+        compareAnswer = TRUE;
+        NSLog(@"They are equal");
+    }
+    else {
+        compareAnswer = FALSE;
+        NSLog(@"They are not equal");
+    }}
+   
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
