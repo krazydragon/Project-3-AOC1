@@ -13,17 +13,14 @@
     //Numbers
     NSInteger integerOne;
     NSInteger integerTwo;
-    NSInteger addAnswer; 
-    NSInteger returnedNumber;
+    NSInteger answer;
     NSNumber *numberOne;
     NSNumber *numberTwo;
-    NSNumber *convertedReturnedNumber;
-    NSInteger returnedAnswer;
     BOOL compareAnswer;
     //Strings
-    NSString *comparedAnswer;
     NSString *stringOne;
     NSString *stringTwo;
+    NSString *comparedAnswer;
     NSMutableString *appendedString;
     //Array
     NSArray *compareArray;

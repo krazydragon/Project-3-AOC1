@@ -24,10 +24,10 @@
     //Call Add Function
     integerOne = 387;
     integerTwo = 268;
-    returnedNumber =[self addFirst:integerOne addSecond:integerTwo];
-    convertedReturnedNumber = [[NSNumber alloc] initWithInt:returnedNumber];
+    answer =[self addFirst:integerOne addSecond:integerTwo];
+    numberOne = [[NSNumber alloc] initWithInt:answer];
     stringOne = @"The number is ";
-    stringTwo = [convertedReturnedNumber stringValue];
+    stringTwo = [numberOne stringValue];
     [self appendStringOne:stringOne appendStringTwo:stringTwo];
     
     //Call Compare Function
@@ -36,15 +36,15 @@
     numberOne = [[NSNumber alloc] initWithInt:integerOne];
     numberTwo = [[NSNumber alloc] initWithInt:integerTwo];
     compareArray = [NSArray arrayWithObjects:numberOne, numberTwo, nil];
-    returnedAnswer =[self compareFirst:integerOne compareSecond:integerTwo];
+    answer =[self compareFirst:integerOne compareSecond:integerTwo];
     stringOne =[[NSString alloc] initWithFormat:@"%@ = %@",[compareArray objectAtIndex:0],[compareArray objectAtIndex:1]];
-    if (returnedAnswer == 1)
+    if (answer == 1)
     {
-        comparedAnswer = @" is TRUE.";
+        comparedAnswer = @"is TRUE.";
     }
     else
     {
-        comparedAnswer = @" is FALSE.";
+        comparedAnswer = @"is FALSE.";
     }
     stringTwo = [[NSString alloc] initWithFormat:@" %@", comparedAnswer];
     [self appendStringOne:stringOne appendStringTwo:stringTwo];
@@ -66,7 +66,7 @@
 -(int)addFirst:(NSInteger)numOne addSecond:(NSInteger)numTwo
 {
     
-    addAnswer = numOne + numTwo;
+    NSInteger addAnswer = numOne + numTwo;
     return addAnswer;
 }
 //Compare Function
