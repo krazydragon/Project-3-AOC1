@@ -16,9 +16,33 @@
 
 - (void)viewDidLoad
 {
-    [self addFirst:5 addSecond:5];
-    [self compareFirst:5 compareSecond:5];
+    //Call append function
     [self appendStringOne:@"I'm thinking" appendStringTwo:@" I'm getting the hang of this!!!"];
+    
+    //Call Add Function
+    returnedNumber =[self addFirst:257 addSecond:68];
+    convertedReturnedNumber = [[NSNumber alloc] initWithInt:returnedNumber];
+    numberString = [convertedReturnedNumber stringValue];
+    [self appendStringOne:@"The number is " appendStringTwo:numberString];
+    
+    //Call Compare Function
+    intergerOne = 50;
+    intergerTwo = 50;
+    numberOne = [[NSNumber alloc] initWithInt:intergerOne];
+    numberTwo = [[NSNumber alloc] initWithInt:intergerTwo];
+    compareArray = [NSArray arrayWithObjects:numberOne, numberTwo, nil];
+    returnedAnswer =[self compareFirst:50 compareSecond:50];
+    compareStringOne =[[NSString alloc] initWithFormat:@"%@ = %@",[compareArray objectAtIndex:0],[compareArray objectAtIndex:1]];
+    if (returnedAnswer == 1)
+    {
+        comparedAnswer =@" is TRUE.";
+    }
+    else
+    {
+        comparedAnswer =@" is FALSE.";
+    }
+    compareStringTwo = [[NSString alloc] initWithFormat:@" %@", comparedAnswer];
+    [self appendStringOne:compareStringOne appendStringTwo:compareStringTwo];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -30,24 +54,24 @@
 }
 
 //Add Function
--(void)addFirst:(NSInteger)numOne addSecond:(NSInteger)numTwo
+-(int)addFirst:(NSInteger)numOne addSecond:(NSInteger)numTwo
 {
     
     addAnswer = numOne + numTwo;
-    NSLog(@"%d", addAnswer);
+    return addAnswer;
 }
 //Compare Function
--(void)compareFirst:(NSInteger)numOne compareSecond:(NSInteger)numTwo
+-(int)compareFirst:(NSInteger)numOne compareSecond:(NSInteger)numTwo
 {
     if (numOne == numTwo)
     {
         compareAnswer = TRUE;
-        NSLog(@"They are equal");
+        
     }
     else {
         compareAnswer = FALSE;
-        NSLog(@"They are not equal");
     }
+    return compareAnswer;
 
 }
 //Append Function
@@ -55,10 +79,24 @@
 {
     appendedString = [[NSMutableString alloc] initWithString: stringOne];
     [appendedString appendString: stringTwo];
-    NSLog(@"%@", appendedString);
+    [self DisplayAlertWithString:appendedString];
     
     
        
+}
+//Display String Function
+-(void)DisplayAlertWithString:(NSString*)alertString
+{
+    
+    displayString = [[UIAlertView alloc] initWithTitle:@"Hi" message:alertString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    if (displayString != nil)
+    {
+        [displayString show];
+    }
+        
+    
+    
 }
  
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
