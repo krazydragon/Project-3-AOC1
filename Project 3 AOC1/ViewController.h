@@ -10,22 +10,26 @@
 
 @interface ViewController : UIViewController
 {
+    //Numbers
+    NSInteger integerOne;
+    NSInteger integerTwo;
     NSInteger addAnswer; 
     NSInteger returnedNumber;
-    NSInteger intergerOne;
-    NSInteger intergerTwo;
-    BOOL compareAnswer;
-    NSString *comparedAnswer;
-    NSInteger returnedAnswer;
-    NSString *compareStringOne;
-    NSString *compareStringTwo;
-    NSMutableString *appendedString;
-    UIAlertView *displayString;
-    NSNumber *convertedReturnedNumber;
-    NSString *numberString;
-    NSArray *compareArray;
     NSNumber *numberOne;
     NSNumber *numberTwo;
+    NSNumber *convertedReturnedNumber;
+    NSInteger returnedAnswer;
+    BOOL compareAnswer;
+    //Strings
+    NSString *comparedAnswer;
+    NSString *stringOne;
+    NSString *stringTwo;
+    NSMutableString *appendedString;
+    //Array
+    NSArray *compareArray;
+    //Alerts
+    UIAlertView *displayString;
+    
 }
 -(int)addFirst:(NSInteger)numOne addSecond:(NSInteger)numTwo;
 -(int)compareFirst:(NSInteger)numOne compareSecond:(NSInteger)numTwo;

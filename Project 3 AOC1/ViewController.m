@@ -17,32 +17,41 @@
 - (void)viewDidLoad
 {
     //Call append function
-    [self appendStringOne:@"I'm thinking" appendStringTwo:@" I'm getting the hang of this!!!"];
+    stringOne = @"I'm thinking";
+    stringTwo = @" I'm getting the hang of this!!!";
+    [self appendStringOne:stringOne appendStringTwo:stringTwo];
     
     //Call Add Function
-    returnedNumber =[self addFirst:257 addSecond:68];
+    integerOne = 387;
+    integerTwo = 268;
+    returnedNumber =[self addFirst:integerOne addSecond:integerTwo];
     convertedReturnedNumber = [[NSNumber alloc] initWithInt:returnedNumber];
-    numberString = [convertedReturnedNumber stringValue];
-    [self appendStringOne:@"The number is " appendStringTwo:numberString];
+    stringOne = @"The number is ";
+    stringTwo = [convertedReturnedNumber stringValue];
+    [self appendStringOne:stringOne appendStringTwo:stringTwo];
     
     //Call Compare Function
-    intergerOne = 50;
-    intergerTwo = 50;
-    numberOne = [[NSNumber alloc] initWithInt:intergerOne];
-    numberTwo = [[NSNumber alloc] initWithInt:intergerTwo];
+    integerOne = 50;
+    integerTwo = 50;
+    numberOne = [[NSNumber alloc] initWithInt:integerOne];
+    numberTwo = [[NSNumber alloc] initWithInt:integerTwo];
     compareArray = [NSArray arrayWithObjects:numberOne, numberTwo, nil];
-    returnedAnswer =[self compareFirst:50 compareSecond:50];
-    compareStringOne =[[NSString alloc] initWithFormat:@"%@ = %@",[compareArray objectAtIndex:0],[compareArray objectAtIndex:1]];
+    returnedAnswer =[self compareFirst:integerOne compareSecond:integerTwo];
+    stringOne =[[NSString alloc] initWithFormat:@"%@ = %@",[compareArray objectAtIndex:0],[compareArray objectAtIndex:1]];
     if (returnedAnswer == 1)
     {
-        comparedAnswer =@" is TRUE.";
+        comparedAnswer = @" is TRUE.";
     }
     else
     {
-        comparedAnswer =@" is FALSE.";
+        comparedAnswer = @" is FALSE.";
     }
-    compareStringTwo = [[NSString alloc] initWithFormat:@" %@", comparedAnswer];
-    [self appendStringOne:compareStringOne appendStringTwo:compareStringTwo];
+    stringTwo = [[NSString alloc] initWithFormat:@" %@", comparedAnswer];
+    [self appendStringOne:stringOne appendStringTwo:stringTwo];
+    
+    
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -75,10 +84,10 @@
 
 }
 //Append Function
--(void)appendStringOne:(NSString*)stringOne appendStringTwo:(NSString*)stringTwo
+-(void)appendStringOne:(NSString*)firstString appendStringTwo:(NSString*)secondString
 {
-    appendedString = [[NSMutableString alloc] initWithString: stringOne];
-    [appendedString appendString: stringTwo];
+    appendedString = [[NSMutableString alloc] initWithString: firstString];
+    [appendedString appendString: secondString];
     [self DisplayAlertWithString:appendedString];
     
     
