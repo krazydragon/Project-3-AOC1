@@ -18,6 +18,7 @@
 {
     [self addFirst:5 addSecond:5];
     [self compareFirst:5 compareSecond:5];
+    [self appendStringOne:@"I'm thinking" appendStringTwo:@" I'm getting the hang of this!!!"];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -46,8 +47,20 @@
     else {
         compareAnswer = FALSE;
         NSLog(@"They are not equal");
-    }}
-   
+    }
+
+}
+//Append Function
+-(void)appendStringOne:(NSString*)stringOne appendStringTwo:(NSString*)stringTwo
+{
+    appendedString = [[NSMutableString alloc] initWithString: stringOne];
+    [appendedString appendString: stringTwo];
+    NSLog(@"%@", appendedString);
+    
+    
+       
+}
+ 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);

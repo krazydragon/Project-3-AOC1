@@ -11,9 +11,10 @@
 @interface ViewController : UIViewController
 {
     NSInteger addAnswer; 
-    BOOL compareAnswer;   
+    BOOL compareAnswer;
+    NSMutableString *appendedString;
 }
 -(void)addFirst:(NSInteger)numOne addSecond:(NSInteger)numTwo;
 -(void)compareFirst:(NSInteger)numOne compareSecond:(NSInteger)numTwo;
-
+-(void)appendStringOne:(NSString*)stringOne appendStringTwo:(NSString*)stringTwo;
 @end
